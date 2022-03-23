@@ -242,12 +242,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.2rem;
 }
 .header h3 {
   letter-spacing: 0.5px;
   font-weight: 500;
   position: relative;
   transition: 0.5s ease;
+  text-align: center;
 }
 .header h3::before {
   position: absolute;
