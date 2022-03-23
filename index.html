@@ -5,20 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>NEWS API</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <title>RECIPE APP</title>
   </head>
   <body>
     <header>
       <nav>
-        <img src="/assets/353 - wall-nag coll 1.jpg" alt="logo" class="logo" />
-        <h4 class="title">News App</h4>
+        <img src="/11.svg" alt="logo" class="logo" />
+        <h4 class="title">Recipe App</h4>
       </nav>
     </header>
     <!-- CARDS -->
+    <div class="form-container">
+      <h2>Search for your <span>favorite</span> meals</h2>
+      <form>
+        <input type="search" name="" id="" placeholder="Start typing" />
+      </form>
+    </div>
+
     <main></main>
+    <!-- MODAL -->
+    <div class="modal-overlay"></div>
     <div class="loader">
       <div class="spinner"></div>
     </div>
     <script src="app.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
   </body>
 </html>
