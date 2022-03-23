@@ -167,6 +167,8 @@ main {
   min-height: 100vh;
   place-items: center;
   display: none;
+  position: fixed;
+  inset: 0;
 }
 .spinner {
   position: relative;
