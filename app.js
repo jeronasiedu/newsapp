@@ -56,7 +56,10 @@ async function getRecipe(searchTerm = url) {
        <div class="modal">
         <div class="header">
           <button class="close">
-            <ion-icon name="close-outline"></ion-icon>
+          <span class="shadow"></span>
+          <span class="edge"></span>
+          <span class="front text"> Close
+          </span>
           </button>
           <h3>Apple Frangipan Tart</h3>
           <p>${item.strCategory}</p>
@@ -76,6 +79,7 @@ async function getRecipe(searchTerm = url) {
       </div>
        `
         modalOverlay.classList.add('open')
+
         const closeBtn = document.querySelectorAll('.close')
         closeBtn.forEach((btn) => {
           btn.addEventListener('click', () => {
@@ -89,7 +93,7 @@ async function getRecipe(searchTerm = url) {
     loader.style.display = 'none'
     console.log(error.response)
     Toastify({
-      text: 'There was an error finding your meal',
+      text: 'Oops, something went wrong, please try again',
       duration: 3000,
       destination: 'https://github.com/apvarun/toastify-js',
       newWindow: true,
