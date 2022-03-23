@@ -19,7 +19,7 @@ logoText.addEventListener('click', () => {
   window.scrollTo(0, 0)
 })
 
-async function getRecipe(searchTerm = url) {
+async function getRecipe(searchTerm = url, type) {
   try {
     loader.style.display = 'grid'
     const response = await fetch(searchTerm)
@@ -100,7 +100,10 @@ async function getRecipe(searchTerm = url) {
     loader.style.display = 'none'
     console.log(error.response)
     Toastify({
-      text: 'Oops, something went wrong, please try again',
+      text:
+        type === 'search'
+          ? "We didn't find your meal. We are working to improve our database"
+          : 'Sorry, something went wrong',
       duration: 3000,
       destination: 'https://github.com/apvarun/toastify-js',
       newWindow: true,
@@ -110,6 +113,10 @@ async function getRecipe(searchTerm = url) {
       stopOnFocus: true, // Prevents dismissing of toast on hover
       style: {
         background: 'linear-gradient(to right, #3454e2, #da18d0)',
+        backdropFilter: 'blur(4px)',
+      },
+      onclick: function () {
+        return false
       },
     }).showToast()
   }
@@ -122,6 +129,6 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()
   const text = form.children[0]
   const value = `https://www.themealdb.com/api/json/v1/1/search.php?s=${text.value.trim()}`
-  getRecipe(value)
+  getRecipe(value, 'search')
   text.value = ''
 })
