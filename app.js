@@ -47,7 +47,7 @@ async function getRecipe(searchTerm = url) {
         <h2 class="meal-title">${item.strMeal}</h2>
         <a href='${
           item.strYoutube
-        }' class="recipe" target='_blank'>Learn to cook</a>
+        }' class="recipe" target='_blank'>Watch a video</a>
       </div>
    `
       main.appendChild(card)
