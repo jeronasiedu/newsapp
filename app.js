@@ -1,5 +1,5 @@
 const generateRandomCharacter = () => {
-  const characters = 'abcdefghijklmnopqrstuvwz'
+  const characters = 'abcdefghijklmnprstvw'
   return characters.charAt(Math.floor(Math.random() * characters.length))
 }
 const char = generateRandomCharacter()
@@ -58,11 +58,10 @@ async function getRecipe(searchTerm = url) {
           <button class="close">
           <span class="shadow"></span>
           <span class="edge"></span>
-          <span class="front text"> Close
+          <span class="front text"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
           </span>
           </button>
-          <h3>Apple Frangipan Tart</h3>
-          <p>${item.strCategory}</p>
+          <h3>${item.strMeal}</h3>
         </div>
         <div class="ingredient">
           <h4>Ingredients</h4>
@@ -85,6 +84,14 @@ async function getRecipe(searchTerm = url) {
           btn.addEventListener('click', () => {
             modalOverlay.classList.remove('open')
           })
+        })
+        modalOverlay.addEventListener('click', (event) => {
+          const withinBoundaries = event
+            .composedPath()
+            .includes(document.querySelector('.modal'))
+          if (!withinBoundaries) {
+            modalOverlay.classList.remove('open')
+          }
         })
       })
     })
